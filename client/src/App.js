@@ -3,18 +3,12 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  createHttpLink,
 } from "@apollo/client";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
-// Construct our main GraphQL API endpoint
-const httpLink = createHttpLink({
-  uri: "/graphql",
-});
+import Home from "./pages/Home";
 
 const client = new ApolloClient({
-  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: httpLink,
+  uri: '/graphql',
   cache: new InMemoryCache(),
 });
 
@@ -24,12 +18,8 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <div className="container">
-            <Route exact path="/">
-              <h1>Test</h1>
-            </Route>
-            <Route exact path="/login"></Route>
-            <Route exact path="/signup"></Route>
-            <Route exact path="/thoughts"></Route>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/FillInLater" />
           </div>
         </div>
       </Router>

@@ -1,39 +1,32 @@
 [
-    {
-      "firstName": "God",
-      "lastName": "",
-      "sex": "Unknown",
-      "yearsLived": "Eternal",
-      "Role": "Creator",
-      "nameMeaning": "God",
-      "married": false,
-      "image": "Unknown",
-      "father": "None",
-      "mother": "none",
-      "spouse": "none",
-      "children": "Everyone",
-      "brother": "none",
-      "sister": "none", 
-      "otherNames": "",
-      "book": "Genesis"
-    },
-    {
-        "firstName": "Adan",
-        "lastName": "",
-        "sex": "male",
-        "yearsLived": "930",
-        "Role": "First Men",
-        "nameMeaning": "Unknown",
-        "married": true,
-        "image": "",
-        "father": "God",
-        "mother": "none",
-        "spouse": "Eve",
-        "children": "Abel, Cain, Seth",
-        "brother": "none",
-        "sister": "none", 
-        "otherNames": "",
-        "book": "Genesis"
-      }
-  ]
-  
+  {
+    "firstName": "God",
+    "lastName": "",
+    "sex": "Unknown",
+    "yearsLived": "Eternal",
+    "role": "Creator",
+    "nameMeaning": "God",
+    "married": false,
+    "otherNames": ""
+  },
+  {
+    "firstName": "Adan",
+    "lastName": "",
+    "sex": "male",
+    "yearsLived": "930",
+    "role": "First Men",
+    "nameMeaning": "",
+    "married": true,
+    "otherNames": ""
+  },
+  {
+    "firstName": "Eve",
+    "lastName": "",
+    "sex": "female",
+    "yearsLived": "Unknown",
+    "role": "First Women",
+    "nameMeaning": "",
+    "married": true,
+    "otherNames": ""
+  }
+]

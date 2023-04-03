@@ -12,7 +12,7 @@ const typeDefs = gql`
     firstName: String
     lastName: String
     sex: String
-    yearsLived: Int
+    yearsLived: String
     role: String
     nameMeaning: [String]
     married: Boolean
@@ -68,11 +68,25 @@ const typeDefs = gql`
 
   type Query {
     books: [Book]
-    book(bookName: String!): Book
+    characters: [Character]
+    events: [Event]
+    materials: [Material]
+    places: [Place]
+    rivers: [River]
+    
+    book(_id: ID!): Book
+    character(_id: ID!): Character
+    event(_id: ID!): Event
+    material(_id: ID!): Material
+    place(_id: ID!): Place
+    river(_id: ID!): River 
   }
 
   type Mutation {
-    addBook(bookName: String!, bookAuthor: String!): Book
+    addBook(name: String!, author: String): Book
+    addCharacter(firstName: String!, lastName: String, sex: String!, 
+      yearsLived: Int, role: String, nameMeaning: String, married: Boolean, 
+      otherNames:[String]): Character
   }
 `;
 

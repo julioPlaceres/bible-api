@@ -1,22 +1,17 @@
 [
   {
-    "bookName": "Genesis",
-    "bookAuthor": "Moses"
+    "name": "Genesis"
   },
   {
-    "bookName": "Exodus",
-    "bookAuthor": "Moses"
+    "name": "Exodus"
   },
   {
-    "bookName": "Numbers",
-    "bookAuthor": "Moses"
+    "name": "Numbers"
   },
   {
-    "bookName": "Deuteronomy",
-    "bookAuthor": "Moses"
+    "name": "Deuteronomy"
   },
   {
-    "bookName": "Leviticus",
-    "bookAuthor": "Moses"
+    "name": "Leviticus"
   }
 ]

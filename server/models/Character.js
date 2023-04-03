@@ -17,7 +17,7 @@ const characterSchema = new Schema({
     trim: true,
   },
   yearsLived: {
-    type: Number,
+    type: String,
     required: false,
   },
   role: {

@@ -2,28 +2,16 @@
   {
     "title": "Heaven and Heart Creation",
     "dateTime": "Day 1",
-    "description": "In the Begining God Created the heavens and the earth.",
-    "image": "",
-    "characters": "God",
-    "location": "Unknown",
-    "book": "Genesis"
+    "description": "In the Begining God Created the heavens and the earth."
   },
   {
     "title": "Creation of Light",
     "dateTime": "Day 1",
-    "description": "God said, ''Let there be light,'' and there was light.",
-    "image": "",
-    "characters": "God",
-    "location": "Unknown",
-    "book": "Genesis"
+    "description": "God said, ''Let there be light,'' and there was light."
   },
   {
     "title": "Separation of Waters",
     "dateTime": "Day 1",
-    "description": "God said, ''Let there be an expanse between the waters, separating water from water''.",
-    "image": "",
-    "characters": "God",
-    "location": "Unknown",
-    "book": "Genesis"
+    "description": "God said, ''Let there be an expanse between the waters, separating water from water''."
   }
 ]

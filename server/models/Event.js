@@ -21,31 +21,24 @@ const eventSchema = new Schema({
     required: true,
     trim: true,
   },
-  characters: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  location: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  book: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  chapter: {
-    type: String,
-    required: true,
-    trim: true,
-  },
-  verse: {
-    type: String,
-    required: true,
-    trim: true,
-  },
+  characters: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Character",
+    },
+  ],
+  location: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Location",
+    },
+  ],
+  book: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Book",
+    },
+  ],
 });
 
 const Event = model("Event", eventSchema);

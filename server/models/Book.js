@@ -1,12 +1,12 @@
 const { Schema, model } = require("mongoose");
 
 const bookSchema = new Schema({
-  bookName: {
+  name: {
     type: String,
     required: true,
     trim: true,
   },
-  bookAuthor: {
+  author: {
     type: String,
     required: true,
     trim: true,

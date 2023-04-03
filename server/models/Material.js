@@ -14,14 +14,22 @@ const materialSchema = new Schema({
   source: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Location",
+      ref: "Place",
     },
   ],
-  image: {
-    type: String,
-    required: false,
-    trim: true,
-  },
+  image: [
+    {
+      type: String,
+      required: false,
+      trim: true,
+    },
+  ],
+  book: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Book",
+    },
+  ],
 });
 
 const Material = model("material", materialSchema);

@@ -16,11 +16,13 @@ const eventSchema = new Schema({
     required: true,
     trim: true,
   },
-  image: {
-    type: String,
-    required: true,
-    trim: true,
-  },
+  image: [
+    {
+      type: String,
+      required: true,
+      trim: true,
+    },
+  ],
   characters: [
     {
       type: Schema.Types.ObjectId,
@@ -30,7 +32,7 @@ const eventSchema = new Schema({
   location: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Location",
+      ref: "Place",
     },
   ],
   book: [

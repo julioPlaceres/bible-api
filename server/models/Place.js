@@ -11,11 +11,25 @@ const placeSchema = new Schema({
     required: false,
     trim: true,
   },
-  location: {
-    type: String,
-    required: false,
-    trim: true,
-  },
+  location: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Place",
+    },
+  ],
+  image: [
+    {
+      type: String,
+      required: false,
+      trim: true,
+    },
+  ],
+  book: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Book",
+    },
+  ],
 });
 
 const Place = model("place", placeSchema);

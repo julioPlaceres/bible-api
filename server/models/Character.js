@@ -25,11 +25,13 @@ const characterSchema = new Schema({
     required: false,
     trim: true,
   },
-  nameMeaning: {
-    type: String,
-    required: false,
-    trim: true,
-  },
+  nameMeaning: [
+    {
+      type: String,
+      required: false,
+      trim: true,
+    },
+  ],
   married: {
     type: Boolean,
     required: true,
@@ -48,10 +50,12 @@ const characterSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Character",
   },
-  spouse: {
-    type: Schema.Types.ObjectId,
-    ref: "Character",
-  },
+  spouse: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Character",
+    },
+  ],
   children: [
     {
       type: Schema.Types.ObjectId,
@@ -70,11 +74,19 @@ const characterSchema = new Schema({
       ref: "Character",
     },
   ],
-  book: {
-    type: String,
-    required: true,
-    trim: true,
-  },
+  otherNames: [
+    {
+      type: String,
+      required: false,
+      trim: true,
+    },
+  ],
+  book: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Book",
+    },
+  ],
 
   fullName: String,
 });

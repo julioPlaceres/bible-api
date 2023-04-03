@@ -1,13 +1,29 @@
 [
   {
-    "title": "The Creation",
-    "dateTime": "0",
-    "description": "God Created The Universe and Everything in it",
+    "title": "Heaven and Heart Creation",
+    "dateTime": "Day 1",
+    "description": "In the Begining God Created the heavens and the earth.",
     "image": "",
     "characters": "God",
-    "location": "",
-    "book": "Genesis",
-    "chapter": "1",
-    "verse": "1"
+    "location": "Unknown",
+    "book": "Genesis"
+  },
+  {
+    "title": "Creation of Light",
+    "dateTime": "Day 1",
+    "description": "God said, ''Let there be light,'' and there was light.",
+    "image": "",
+    "characters": "God",
+    "location": "Unknown",
+    "book": "Genesis"
+  },
+  {
+    "title": "Separation of Waters",
+    "dateTime": "Day 1",
+    "description": "God said, ''Let there be an expanse between the waters, separating water from water''.",
+    "image": "",
+    "characters": "God",
+    "location": "Unknown",
+    "book": "Genesis"
   }
 ]

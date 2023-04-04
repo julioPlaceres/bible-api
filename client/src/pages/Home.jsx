@@ -1,11 +1,11 @@
-import QueryView from "../components/QueryView";
+import ContentWindow from "../components/ContentWindow";
 
 const Home = () => {
-    return (
-        <div className="container">
-            <QueryView />
-        </div>
-    );
+  return (
+    <div className="container">
+      <ContentWindow />
+    </div>
+  );
 };
 
 export default Home;

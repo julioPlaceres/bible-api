@@ -7,9 +7,8 @@ const bookSchema = new Schema({
     trim: true,
   },
   author: {
-    type: String,
-    required: false,
-    trim: true,
+    type: Schema.Types.ObjectId,
+    ref: "Character"
   },
 });
 

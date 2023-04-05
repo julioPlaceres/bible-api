@@ -1,0 +1,17 @@
+.qv-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.qv-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.qv-select-cont {
+    align-items: flex-end;
+}
+
+.qv-col h1 {
+    color: white;
+}

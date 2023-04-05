@@ -1,7 +1,6 @@
 [
   {
-    "firstName": "God",
-    "lastName": "",
+    "name": "God",
     "sex": "Unknown",
     "yearsLived": "Eternal",
     "role": "Creator",
@@ -10,8 +9,7 @@
     "otherNames": ""
   },
   {
-    "firstName": "Adan",
-    "lastName": "",
+    "name": "Adan",
     "sex": "male",
     "yearsLived": "930",
     "role": "First Men",
@@ -20,8 +18,7 @@
     "otherNames": ""
   },
   {
-    "firstName": "Eve",
-    "lastName": "",
+    "name": "Eve",
     "sex": "female",
     "yearsLived": "Unknown",
     "role": "First Women",

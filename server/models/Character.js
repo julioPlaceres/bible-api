@@ -1,14 +1,9 @@
 const { Schema, model } = require("mongoose");
 
 const characterSchema = new Schema({
-  firstName: {
+  name: {
     type: String,
     required: true,
-    trim: true,
-  },
-  lastName: {
-    type: String,
-    required: false,
     trim: true,
   },
   sex: {
@@ -87,15 +82,7 @@ const characterSchema = new Schema({
       ref: "Book",
     },
   ],
-
-  fullName: String,
 });
-
-characterSchema.methods.setFullName = function () {
-  this.fullName = `${this.firstName} ${this.lastName}`;
-
-  return this.fullName;
-};
 
 const Character = model("Character", characterSchema);
 

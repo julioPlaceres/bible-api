@@ -7,10 +7,9 @@ const Select = ({ id, label, name, values, onChange }) => {
       <select id={id} name={name} onChange={onChange}>
         <option value="">--Please choose an option</option>
         {values.map((value) => {
-          const capValue = value.toUpperCase();
           return (
-            <option key={capValue} value={capValue}>
-              {capValue}
+            <option key={value.toLowerCase()} value={value}>
+              {value}
             </option>
           );
         })}

@@ -1,24 +1,23 @@
 import { gql } from "@apollo/client";
 
 export const QUERY_ALL_BOOKS = gql`
-{
+query getBooks {
     books {
         _id
         name
         author {
             _id
-            firstName
+            name
         }
     }
 }
 `;
 
 export const QUERY_ALL_CHARACTERS = gql`
-{
+query getCharacters {
     characters {
         _id
-        firstName
-        lastName
+        name
         sex
         yearsLived
         role
@@ -27,35 +26,33 @@ export const QUERY_ALL_CHARACTERS = gql`
         image
         father {
             _id
-            firstName
+            name
         }
         mother {
             _id
-            firstName
+            name
         }
         spouse {
             _id
-            firstName
+            name
         }
         children {
             _id
-            firstName
+            name
         }
         brother {
             _id
-            firstName
+            name
         }
         sister {
             _id
-            firstName
+            name
         }
         otherNames
         book {
             _id
             name
-            author
         }
-        fullName
     }
 }
 `;
@@ -70,7 +67,7 @@ export const QUERY_ALL_EVENTS = gql`
         image
         characters {
             _id
-            firstName
+            name
         }
         location {
             _id
@@ -81,7 +78,7 @@ export const QUERY_ALL_EVENTS = gql`
             name
             author {
                 _id
-                firstName
+                name
             }
         }
     }

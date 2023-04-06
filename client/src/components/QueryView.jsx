@@ -1,14 +1,31 @@
-import { useQuery } from "@apollo/client";
 import Select from "./Select";
 import Button from "./Button";
-import { QUERY_ALL_BOOKS } from "../utils/queries";
+import { GetAllBooks, GetAllCharacters } from "./queryComponents/query/Query";
 import "./QueryView.css";
+import { useState } from "react";
 
-const GetAllBooks = () => {
-  const { loading, data } = useQuery(QUERY_ALL_BOOKS);
-  const books = data?.books || [];
+const renderSwitch = (params) => {
+  switch (params) {
+    case "QUERY_ALL_BOOKS":
+      return <GetAllBooks />
+
+    case "QUERY_ALL_CHARACTERS":
+      return <GetAllCharacters />
+
+    default:
+      return <GetAllCharacters />
+  }
+}
+
+export const QueryView = () => {
+  const [method, setMethod] = useState("");
   const queryNames = ["QUERY_ALL_BOOKS", "QUERY_ALL_CHARACTERS"];
-  const handleSearch = () => { };
+  const handleSearch = (event) => {
+    event.preventDefault();
+
+    const methodEl = document.getElementById("methodId")
+    setMethod(methodEl.value);
+  };
 
   return (
     <div className="qv-col">
@@ -23,21 +40,10 @@ const GetAllBooks = () => {
         <Button label="Search" onClick={handleSearch} />
       </div>
 
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <p>
-          {books.map((item) => {
-            return (
-              <>
-                <p>{item.name}</p> <br />
-              </>
-            )
-          })}
-        </p>
-      )}
+      <div>
+        {renderSwitch(method)}
+      </div>
+
     </div>
   );
 };
-
-export default GetAllBooks;

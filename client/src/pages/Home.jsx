@@ -1,5 +1,5 @@
 import ContentWindow from "../components/ContentWindow";
-import QueryView from "../components/QueryView";
+import { QueryView } from "../components/QueryView";
 import "./Home.css";
 
 const Home = () => {

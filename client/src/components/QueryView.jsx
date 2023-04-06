@@ -1,6 +1,6 @@
 import Select from "./Select";
 import Button from "./Button";
-import { GetAllBooks, GetAllCharacters } from "./queryComponents/query/Query";
+import { GetAllBooks, GetAllCharacters } from "./queryComponents/Query";
 import "./QueryView.css";
 import { useState } from "react";
 
@@ -40,7 +40,7 @@ export const QueryView = () => {
         <Button label="Search" onClick={handleSearch} />
       </div>
 
-      <div>
+      <div className="qv-result-body">
         {renderSwitch(method)}
       </div>
 

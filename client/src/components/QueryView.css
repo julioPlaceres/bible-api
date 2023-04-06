@@ -12,14 +12,16 @@
     align-items: flex-end;
 }
 
-.qv-col h1 {
-    color: white;
-}
-
-.qv-col p {
-    color: white;
-}
-
 .qv-col div {
     color: white;
+}
+
+.qv-result-body {
+    height: 900px;
+    width: 30vw;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    overflow-x: hidden;
+    font-size: large;
 }

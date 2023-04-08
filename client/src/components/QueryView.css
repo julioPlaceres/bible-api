@@ -1,0 +1,28 @@
+.qv-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.qv-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.qv-select-cont {
+    align-items: flex-end;
+}
+
+.qv-col div {
+    color: white;
+}
+
+.qv-result-body {
+    height: 800px;
+    width: 30vw;
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    overflow-x: hidden;
+    overflow-x: scroll;
+    font-size: large;
+}

@@ -1,0 +1,6 @@
+.f-main-cont {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5vw;
+    margin-bottom: 1.5vw;
+}

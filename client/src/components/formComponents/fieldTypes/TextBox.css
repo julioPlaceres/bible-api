@@ -1,0 +1,16 @@
+.tb-main-cont {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vw;
+}
+
+.tb-label {
+    margin-top: 5px;
+}
+
+.tb-textArea {
+    margin-top: 5px;
+    width: 20vw;
+    max-width: 300px;
+    min-width: 100px;
+}

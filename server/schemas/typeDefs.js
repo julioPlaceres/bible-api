@@ -9,9 +9,8 @@ const typeDefs = gql`
 
   type Character {
     _id: ID
-    firstName: String
-    lastName: String
-    sex: String
+    name: String
+    gender: String
     yearsLived: String
     role: String
     nameMeaning: [String]
@@ -30,7 +29,7 @@ const typeDefs = gql`
 
   type Event {
     _id: ID
-    title: String
+    name: String
     dateTime: String
     description: String
     image: [String]
@@ -73,20 +72,26 @@ const typeDefs = gql`
     materials: [Material]
     places: [Place]
     rivers: [River]
-    
+
     book(_id: ID!): Book
     character(_id: ID!): Character
     event(_id: ID!): Event
     material(_id: ID!): Material
     place(_id: ID!): Place
-    river(_id: ID!): River 
+    river(_id: ID!): River
   }
 
   type Mutation {
     addBook(name: String!, author: String): Book
-    addCharacter(firstName: String!, lastName: String, sex: String!, 
-      yearsLived: Int, role: String, nameMeaning: String, married: Boolean, 
-      otherNames:[String]): Character
+    addCharacter(
+      name: String!
+      sex: String!
+      yearsLived: Int
+      role: String
+      nameMeaning: String
+      married: Boolean
+      otherNames: [String]
+    ): Character
   }
 `;
 

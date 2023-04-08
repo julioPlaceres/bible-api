@@ -1,0 +1,10 @@
+.h-main-cont {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: rgb(0, 0, 0);
+    background-image: url(../static/img/06-Cross.PNG);
+    /* background-image: url(../static/img/05-Cross.PNG); */
+    background-repeat: no-repeat;
+    background-position: center;
+}

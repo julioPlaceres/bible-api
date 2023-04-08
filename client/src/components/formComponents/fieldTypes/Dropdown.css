@@ -1,0 +1,16 @@
+.dd-main-cont {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2vw;
+}
+
+.dd-label {
+    margin-top: 5px;
+}
+
+.dd-select {
+    margin-top: 5px;
+    width: 20vw;
+    max-width: 300px;
+    min-width: 100px;
+}

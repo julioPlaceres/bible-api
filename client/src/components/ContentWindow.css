@@ -11,23 +11,20 @@
 .cw-main-cont {
     align-items: flex-start;
     height: 100vh;
-    background-color: rgb(58, 3, 58);
-}
-
-.cw-form-cont {
-    align-items: flex-start;
 }
 
 .cw-method-cont {
-    align-items: flex-end;
-    border: 2px solid gray;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .cw-form-body {
     display: block;
-    width: 100%;
-    height: 50vh;
+    width: 30vw;
+    height: 800px;
     background-color: white;
+    overflow-x: hidden;
+    
 }
 
 .cw-btns-cont {

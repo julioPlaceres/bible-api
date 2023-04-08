@@ -17,11 +17,12 @@
 }
 
 .qv-result-body {
-    height: 900px;
+    height: 800px;
     width: 30vw;
     color: white;
     background-color: black;
     border: 1px solid white;
     overflow-x: hidden;
+    overflow-x: scroll;
     font-size: large;
 }

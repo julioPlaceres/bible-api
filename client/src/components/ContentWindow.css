@@ -21,8 +21,10 @@
 .cw-form-body {
     display: block;
     width: 30vw;
-    height: 50vh;
+    height: 800px;
     background-color: white;
+    overflow-x: hidden;
+    
 }
 
 .cw-btns-cont {

@@ -1,100 +1,195 @@
 import { Dropdown } from "../fieldTypes/Dropdown";
 import { TextBox } from "../fieldTypes/TextBox";
-import { GetAllCharacters } from "../dataArr/CharactersQuery";
+import { GetAllCharacters, GetAllBooks } from "../dataArr/Query";
 
-const yesNo = [{
+const yesNo = [
+  {
     value: "yes",
     label: "Yes",
-},
-{
+  },
+  {
     value: "no",
-    label: "No"
-}
+    label: "No",
+  },
 ];
 
 export const NameField = () => {
-    return (<TextBox labelText="Name"
-        placeholder="ie: Jesus"
-        name="nameTextBox"
-        required={true}
-        rows={1} />);
-}
+  return (
+    <TextBox
+      labelText="Name"
+      placeholder="ie: Jesus"
+      name="nameTextBox"
+      required={true}
+      rows={1}
+    />
+  );
+};
 
 export const GenderField = () => {
-    const gender = [{ value: "male", label: "Male" }, { value: "female", label: "Female" }];
+  const gender = [
+    { value: "male", label: "Male" },
+    { value: "female", label: "Female" },
+  ];
 
-    return (
-        <>
-            <Dropdown labelText="Gender"
-                name="gender"
-                options={gender} />
-        </>
-    );
-}
+  return (
+    <>
+      <Dropdown labelText="Gender" name="gender" options={gender} />
+    </>
+  );
+};
 
 export const YearsLivedField = () => {
-    return (<TextBox labelText="Years Lived"
-        placeholder="ie: 930"
-        name="yearsLived"
-        required={false}
-        rows={1} />);
-}
+  return (
+    <TextBox
+      labelText="Years Lived"
+      placeholder="ie: 930"
+      name="yearsLived"
+      required={false}
+      rows={1}
+    />
+  );
+};
 
 export const RoleField = () => {
-    return (<TextBox
-        labelText="Role"
-        placeholder="ie: The Messiah"
-        required={false}
-        rows={1} />
-    );
-}
+  return (
+    <TextBox
+      labelText="Role"
+      placeholder="ie: The Messiah"
+      required={false}
+      rows={1}
+    />
+  );
+};
 
 export const NameMeaningField = () => {
-    return (<TextBox
-        labelText="Name Meaning"
-        placeholder="ie: The Savior"
-        required={false}
-        rows={1} />
-    );
-}
+  return (
+    <TextBox
+      labelText="Name Meaning"
+      placeholder="ie: The Savior"
+      required={false}
+      rows={1}
+    />
+  );
+};
 
 export const MarriedField = () => {
-    return (<Dropdown
-        name="married"
-        labelText="Select an option"
-        options={yesNo} />
-    );
-}
+  return <Dropdown name="married" labelText="Married" options={yesNo} />;
+};
 
 export const ImageField = () => {
-    return (<>
-        {/* Will be used to upload images */}
-    </>
-    );
-}
+  return <>{/* Will be used to upload images */}</>;
+};
 
 export const FatherField = () => {
-    const options = GetAllCharacters();
+  const options = GetAllCharacters();
 
-    return (
-        <>
-            <Dropdown
-                name="Father"
-                labelText="Select an Character"
-                options={options} />
-        </>
-    );
-}
+  return (
+    <>
+      <Dropdown name="father" labelText="Father" options={options} />
+    </>
+  );
+};
+
+export const MotherField = () => {
+  const options = GetAllCharacters();
+
+  return (
+    <>
+      <Dropdown name="mother" labelText="Mother" options={options} />
+    </>
+  );
+};
+
+export const SpouseField = () => {
+  const options = GetAllCharacters();
+
+  return (
+    <>
+      <Dropdown
+        name="spouse"
+        labelText="Spouse(s)"
+        options={options}
+        multiple={true}
+      />
+    </>
+  );
+};
+
+export const ChildrenField = () => {
+  const options = GetAllCharacters();
+
+  return (
+    <>
+      <Dropdown
+        name="children"
+        labelText="Children(s)"
+        options={options}
+        multiple={true}
+      />
+    </>
+  );
+};
+
+export const BrotherField = () => {
+  const options = GetAllCharacters();
+
+  return (
+    <>
+      <Dropdown
+        name="brother"
+        labelText="Brother(s)"
+        options={options}
+        multiple={true}
+      />
+    </>
+  );
+};
+
+export const SisterField = () => {
+  const options = GetAllCharacters();
+
+  return (
+    <>
+      <Dropdown
+        name="sister"
+        labelText="Sister(s)"
+        options={options}
+        multiple={true}
+      />
+    </>
+  );
+};
+
+export const OtherNamesField = () => {
+  return (
+    <>
+      <TextBox
+        name="otherNames"
+        labelText="Other Names"
+        placeholder="Separate names by a ','
+        ie: The Savior, The Messiah"
+        rows={3}
+      />
+    </>
+  );
+};
 
 export const AuthorField = () => {
-    const options = GetAllCharacters();
+  const options = GetAllCharacters();
 
-    return (
-        <>
-            <Dropdown
-                name="author"
-                labelText="Select an Author"
-                options={options} />
-        </>
-    );
-}
+  return (
+    <>
+      <Dropdown name="author" labelText="Author" options={options} />
+    </>
+  );
+};
+
+export const BookNameField = () => {
+  const options = GetAllBooks();
+
+  return (
+    <>
+      <Dropdown name="author" labelText="Author" options={options} />
+    </>
+  );
+};

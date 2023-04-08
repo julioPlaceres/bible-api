@@ -18,7 +18,7 @@ query getCharacters {
     characters {
         _id
         name
-        sex
+        gender
         yearsLived
         role
         nameMeaning

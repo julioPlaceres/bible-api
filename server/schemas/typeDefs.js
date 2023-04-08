@@ -10,7 +10,7 @@ const typeDefs = gql`
   type Character {
     _id: ID
     name: String
-    sex: String
+    gender: String
     yearsLived: String
     role: String
     nameMeaning: [String]

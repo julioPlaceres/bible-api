@@ -6,7 +6,7 @@ const characterSchema = new Schema({
     required: true,
     trim: true,
   },
-  sex: {
+  gender: {
     type: String,
     required: true,
     trim: true,

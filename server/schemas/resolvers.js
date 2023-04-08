@@ -51,11 +51,11 @@ const resolvers = {
       const book = await Book.create({ name, author });
       return { book };
     },
-    addCharacter: async ({ name, sex, yearsLived,
+    addCharacter: async ({ name, gender, yearsLived,
       role, nameMeaning, married, image, father, mother, spouse, children,
       brother, sister, otherNames, book }) => {
       const character = await Character.create({
-        name, sex, yearsLived,
+        name, gender, yearsLived,
         role, nameMeaning, married, image, father, mother, spouse,
         children, brother, sister, otherNames, book
       });

@@ -1,7 +1,7 @@
 [
   {
     "name": "God",
-    "sex": "Unknown",
+    "gender": "Unknown",
     "yearsLived": "Eternal",
     "role": "Creator",
     "nameMeaning": "God",
@@ -10,7 +10,7 @@
   },
   {
     "name": "Adan",
-    "sex": "male",
+    "gender": "male",
     "yearsLived": "930",
     "role": "First Men",
     "nameMeaning": "",
@@ -19,7 +19,7 @@
   },
   {
     "name": "Eve",
-    "sex": "female",
+    "gender": "female",
     "yearsLived": "Unknown",
     "role": "First Women",
     "nameMeaning": "",

@@ -1,29 +1,55 @@
 import Select from "./Select";
 import Button from "./Button";
-import { GetAllBooks, GetAllCharacters } from "./queryComponents/Query";
+import {
+  GetAllBooks,
+  GetAllCharacters,
+  GetAllEvents,
+  GetAllMaterials,
+  GetAllPlaces,
+  GetAllRivers,
+} from "./queryComponents/Query";
 import "./QueryView.css";
 import { useState } from "react";
 
 const renderSwitch = (params) => {
   switch (params) {
     case "QUERY_ALL_BOOKS":
-      return <GetAllBooks />
+      return <GetAllBooks />;
 
     case "QUERY_ALL_CHARACTERS":
-      return <GetAllCharacters />
+      return <GetAllCharacters />;
+
+    case "QUERY_ALL_EVENTS":
+      return <GetAllEvents />;
+
+    case "QUERY_ALL_MATERIALS":
+      return <GetAllMaterials />;
+
+    case "QUERY_ALL_PLACES":
+      return <GetAllPlaces />;
+
+    case "QUERY_ALL_RIVERS":
+      return <GetAllRivers />;
 
     default:
-      return <GetAllCharacters />
+      return <GetAllCharacters />;
   }
-}
+};
 
 export const QueryView = () => {
   const [method, setMethod] = useState("");
-  const queryNames = ["QUERY_ALL_BOOKS", "QUERY_ALL_CHARACTERS"];
+  const queryNames = [
+    "QUERY_ALL_BOOKS",
+    "QUERY_ALL_CHARACTERS",
+    "QUERY_ALL_EVENTS",
+    "QUERY_ALL_MATERIALS",
+    "QUERY_ALL_PLACES",
+    "QUERY_ALL_RIVERS",
+  ];
   const handleSearch = (event) => {
     event.preventDefault();
 
-    const methodEl = document.getElementById("methodId")
+    const methodEl = document.getElementById("methodId");
     setMethod(methodEl.value);
   };
 
@@ -40,10 +66,7 @@ export const QueryView = () => {
         <Button label="Search" onClick={handleSearch} />
       </div>
 
-      <div className="qv-result-body">
-        {renderSwitch(method)}
-      </div>
-
+      <div className="qv-result-body">{renderSwitch(method)}</div>
     </div>
   );
 };

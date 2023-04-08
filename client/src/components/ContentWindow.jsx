@@ -1,25 +1,51 @@
 import { useState } from "react";
 import Button from "./Button";
 import Select from "./Select";
-import { Character, Book } from "../components/formComponents/forms/Forms";
+import {
+  Character,
+  Book,
+  Event,
+  Material,
+  Place,
+  River,
+} from "../components/formComponents/forms/Forms";
 import "./ContentWindow.css";
 
 const renderSwitch = (params) => {
   switch (params) {
     case "Book":
-      return <Book />
+      return <Book />;
 
     case "Character":
-      return <Character />
+      return <Character />;
+
+    case "Event":
+      return <Event />;
+
+    case "Material":
+      return <Material />;
+
+    case "Place":
+      return <Place />;
+
+    case "River":
+      return <River />;
 
     default:
-      return <Character />
+      return <Character />;
   }
-}
+};
 
 const ContentWindow = () => {
   const [modelName, setModelName] = useState("");
-  const modelNames = ["Book", "Character", "Event", "Material", "Place", "River"];
+  const modelNames = [
+    "Book",
+    "Character",
+    "Event",
+    "Material",
+    "Place",
+    "River",
+  ];
 
   const handleModelChange = (event) => {
     event.preventDefault();
@@ -27,12 +53,11 @@ const ContentWindow = () => {
     setModelName(event.target.value);
   };
 
-  const handleReset = () => { };
-  const handleSubmit = () => { };
+  const handleReset = () => {};
+  const handleSubmit = () => {};
 
   return (
     <div className="cw-main-cont cw-col">
-
       <div className="cw-method-cont cw-row">
         <Select
           id="modelId"
@@ -43,9 +68,7 @@ const ContentWindow = () => {
         />
       </div>
 
-      <div className="cw-form-body">
-        {renderSwitch(modelName)}
-      </div>
+      <div className="cw-form-body">{renderSwitch(modelName)}</div>
 
       <div className="cw-btns-cont cw-row">
         <Button label="Reset" onClick={handleReset} />

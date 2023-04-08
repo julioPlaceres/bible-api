@@ -1,16 +1,16 @@
 [
   {
-    "title": "Heaven and Heart Creation",
+    "name": "Heaven and Heart Creation",
     "dateTime": "Day 1",
     "description": "In the Begining God Created the heavens and the earth."
   },
   {
-    "title": "Creation of Light",
+    "name": "Creation of Light",
     "dateTime": "Day 1",
     "description": "God said, ''Let there be light,'' and there was light."
   },
   {
-    "title": "Separation of Waters",
+    "name": "Separation of Waters",
     "dateTime": "Day 1",
     "description": "God said, ''Let there be an expanse between the waters, separating water from water''."
   }

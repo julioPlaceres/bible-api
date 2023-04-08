@@ -1,6 +1,6 @@
 import { Dropdown } from "../fieldTypes/Dropdown";
 import { TextBox } from "../fieldTypes/TextBox";
-import { GetAllCharacters, GetAllBooks } from "../dataArr/Query";
+import { GetAllCharacters, GetAllBooks, GetAllPlaces } from "../dataArr/Query";
 
 const yesNo = [
   {
@@ -13,11 +13,11 @@ const yesNo = [
   },
 ];
 
-export const NameField = () => {
+export const NameField = ({ placeholder }) => {
   return (
     <TextBox
       labelText="Name"
-      placeholder="ie: Jesus"
+      placeholder={placeholder}
       name="nameTextBox"
       required={true}
       rows={1}
@@ -189,7 +189,63 @@ export const BookNameField = () => {
 
   return (
     <>
-      <Dropdown name="author" labelText="Author" options={options} />
+      <Dropdown name="book" labelText="Book" options={options} />
+    </>
+  );
+};
+
+export const DateTimeField = () => {
+  return (
+    <>
+      <TextBox
+        name="dateTime"
+        labelText="Date Time"
+        placeholder="ie: 25 BC, or the begining"
+      />
+    </>
+  );
+};
+
+export const DescriptionField = () => {
+  return (
+    <>
+      <TextBox
+        name="decription"
+        labelText="Description"
+        placeholder="Brief description of the event"
+        required={true}
+        rows={5}
+      />
+    </>
+  );
+};
+
+export const CharactersField = () => {
+  const options = GetAllCharacters();
+
+  return (
+    <>
+      <Dropdown
+        name="character"
+        labelText="Characters"
+        options={options}
+        multiple={true}
+      />
+    </>
+  );
+};
+
+export const LocationField = () => {
+  const options = GetAllPlaces();
+
+  return (
+    <>
+      <Dropdown
+        name="location"
+        labelText="Location"
+        options={options}
+        multiple={true}
+      />
     </>
   );
 };

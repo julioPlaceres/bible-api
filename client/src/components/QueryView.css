@@ -26,3 +26,8 @@
     overflow-x: scroll;
     font-size: large;
 }
+
+.cw-dft-method {
+    display: flex;
+    justify-content: space-evenly;
+}

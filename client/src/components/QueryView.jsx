@@ -32,7 +32,7 @@ const renderSwitch = (params) => {
       return <GetAllRivers />;
 
     default:
-      return <GetAllCharacters />;
+      return <h5 className="cw-dft-method">Select an option from the Method dropdown</h5>;
   }
 };
 

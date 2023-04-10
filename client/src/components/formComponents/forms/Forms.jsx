@@ -20,6 +20,8 @@ import {
   CharactersField,
   LocationField,
 } from "../formFields/FormFields";
+import { useDispatch } from "react-redux";
+import { setAuthor, setName } from "../../../redux/forms/book";
 import "./Forms.css";
 
 export const Character = () => {
@@ -45,10 +47,29 @@ export const Character = () => {
 };
 
 export const Book = () => {
+  const dispatch = useDispatch();
+
+  const handleOnChange = (e) => {
+    e.preventDefault();
+
+    switch (e.target.name) {
+      case "name":
+        dispatch(setName(e.target.value));
+        break;
+
+      case "author":
+        dispatch(setAuthor(e.target.value));
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <div className="f-main-cont">
-      <NameField placeholder="ie: Genesis" />
-      <AuthorField />
+      <NameField placeholder="ie: Genesis" onChange={handleOnChange} />
+      <AuthorField onChange={handleOnChange} />
     </div>
   );
 };

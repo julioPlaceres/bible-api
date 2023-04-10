@@ -13,14 +13,16 @@ const yesNo = [
   },
 ];
 
-export const NameField = ({ placeholder }) => {
+export const NameField = ({ value, placeholder, onChange }) => {
   return (
     <TextBox
       labelText="Name"
+      value={value}
       placeholder={placeholder}
-      name="nameTextBox"
+      name="name"
       required={true}
       rows={1}
+      onChange={onChange}
     />
   );
 };
@@ -38,10 +40,11 @@ export const GenderField = () => {
   );
 };
 
-export const YearsLivedField = () => {
+export const YearsLivedField = (value) => {
   return (
     <TextBox
       labelText="Years Lived"
+      value={value}
       placeholder="ie: 930"
       name="yearsLived"
       required={false}
@@ -50,9 +53,10 @@ export const YearsLivedField = () => {
   );
 };
 
-export const RoleField = () => {
+export const RoleField = (value) => {
   return (
     <TextBox
+      value={value}
       labelText="Role"
       placeholder="ie: The Messiah"
       required={false}
@@ -61,9 +65,10 @@ export const RoleField = () => {
   );
 };
 
-export const NameMeaningField = () => {
+export const NameMeaningField = (value) => {
   return (
     <TextBox
+      value={value}
       labelText="Name Meaning"
       placeholder="ie: The Savior"
       required={false}
@@ -160,10 +165,11 @@ export const SisterField = () => {
   );
 };
 
-export const OtherNamesField = () => {
+export const OtherNamesField = (value) => {
   return (
     <>
       <TextBox
+        value
         name="otherNames"
         labelText="Other Names"
         placeholder="Separate names by a ','
@@ -174,12 +180,17 @@ export const OtherNamesField = () => {
   );
 };
 
-export const AuthorField = () => {
+export const AuthorField = ({ onChange }) => {
   const options = GetAllCharacters();
 
   return (
     <>
-      <Dropdown name="author" labelText="Author" options={options} />
+      <Dropdown
+        name="author"
+        labelText="Author"
+        options={options}
+        onChange={onChange}
+      />
     </>
   );
 };
@@ -194,11 +205,12 @@ export const BookNameField = () => {
   );
 };
 
-export const DateTimeField = () => {
+export const DateTimeField = (value) => {
   return (
     <>
       <TextBox
         name="dateTime"
+        value={value}
         labelText="Date Time"
         placeholder="ie: 25 BC, or the begining"
       />
@@ -206,11 +218,12 @@ export const DateTimeField = () => {
   );
 };
 
-export const DescriptionField = () => {
+export const DescriptionField = (value) => {
   return (
     <>
       <TextBox
         name="decription"
+        value={value}
         labelText="Description"
         placeholder="Brief description of the event"
         required={true}

@@ -20,8 +20,12 @@ import {
   CharactersField,
   LocationField,
 } from "../formFields/FormFields";
+import Button from "../../Button";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useMutation } from "@apollo/client";
 import { setAuthor, setName } from "../../../redux/forms/book";
+import { ADD_BOOK } from "../../../utils/mutation";
 import "./Forms.css";
 
 export const Character = () => {
@@ -47,6 +51,8 @@ export const Character = () => {
 };
 
 export const Book = () => {
+  const { name, author } = useSelector((state) => state.book);
+  const [addBook, { data, loading, error }] = useMutation(ADD_BOOK);
   const dispatch = useDispatch();
 
   const handleOnChange = (e) => {
@@ -66,11 +72,32 @@ export const Book = () => {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    console.log(name);
+    console.log(author);
+
+    try {
+      const { data } = await addBook({
+        variables: { name: name, author: author },
+      });
+      console.log(data);
+    } catch (ex) {
+      console.error(ex);
+    }
+  };
+
   return (
-    <div className="f-main-cont">
-      <NameField placeholder="ie: Genesis" onChange={handleOnChange} />
-      <AuthorField onChange={handleOnChange} />
-    </div>
+    <form onSubmit={handleSubmit}>
+      <div className="cw-form-body">
+        <div className="f-main-cont">
+          <NameField placeholder="ie: Genesis" onChange={handleOnChange} />
+          <AuthorField onChange={handleOnChange} />
+        </div>
+      </div>
+      <FormBtns />
+    </form>
   );
 };
 
@@ -120,6 +147,15 @@ export const River = () => {
       <LocationField />
       <ImageField />
       <BookNameField />
+    </div>
+  );
+};
+
+const FormBtns = () => {
+  return (
+    <div className="cw-btns-cont cw-row">
+      <Button type="reset" label="Reset" />
+      <Button type="submit" label="submit" />
     </div>
   );
 };

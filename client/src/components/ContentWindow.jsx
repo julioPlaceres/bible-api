@@ -9,11 +9,9 @@ import {
   Place,
   River,
 } from "../components/formComponents/forms/Forms";
-import { useSelector } from "react-redux";
 import "./ContentWindow.css";
 
 const ContentWindow = () => {
-  const { name, author } = useSelector((state) => state.book);
   const [modelName, setModelName] = useState("");
 
   const modelNames = [
@@ -47,9 +45,11 @@ const ContentWindow = () => {
 
       default:
         return (
-          <h5 className="cw-dft-model">
-            Select an option from the Model dropdown
-          </h5>
+          <div className="cw-form-body">
+            <h5 className="cw-dft-model">
+              Select an option from the Model dropdown
+            </h5>
+          </div>
         );
     }
   };
@@ -58,13 +58,6 @@ const ContentWindow = () => {
     event.preventDefault();
 
     setModelName(event.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log(name);
-    console.log(author);
   };
 
   return (
@@ -78,15 +71,7 @@ const ContentWindow = () => {
           onChange={handleModelChange}
         />
       </div>
-
-      <form onSubmit={handleSubmit}>
-        <div className="cw-form-body">{renderSwitch(modelName)}</div>
-
-        <div className="cw-btns-cont cw-row">
-          <Button type="reset" label="Reset" />
-          <Button type="submit" label="submit" />
-        </div>
-      </form>
+      {renderSwitch(modelName)}
     </div>
   );
 };

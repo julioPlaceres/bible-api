@@ -1,10 +1,4 @@
-const { Book,
-  Character,
-  Event,
-  Material,
-  Place,
-  River
-} = require("../models");
+const { Book, Character, Event, Material, Place, River } = require("../models");
 
 const resolvers = {
   Query: {
@@ -51,16 +45,42 @@ const resolvers = {
       const book = await Book.create({ name, author });
       return { book };
     },
-    addCharacter: async ({ name, gender, yearsLived,
-      role, nameMeaning, married, image, father, mother, spouse, children,
-      brother, sister, otherNames, book }) => {
+    addCharacter: async ({
+      name,
+      gender,
+      yearsLived,
+      role,
+      nameMeaning,
+      married,
+      image,
+      father,
+      mother,
+      spouse,
+      children,
+      brother,
+      sister,
+      otherNames,
+      book,
+    }) => {
       const character = await Character.create({
-        name, gender, yearsLived,
-        role, nameMeaning, married, image, father, mother, spouse,
-        children, brother, sister, otherNames, book
+        name,
+        gender,
+        yearsLived,
+        role,
+        nameMeaning,
+        married,
+        image,
+        father,
+        mother,
+        spouse,
+        children,
+        brother,
+        sister,
+        otherNames,
+        book,
       });
       return { character };
-    }
+    },
   },
 };
 

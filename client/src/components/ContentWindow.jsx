@@ -2,6 +2,7 @@ import { useState } from "react";
 import Select from "./Select";
 import { Book } from "../components/formComponents/forms/book";
 import { Character } from "../components/formComponents/forms/character";
+import { Event } from "../components/formComponents/forms/event";
 import "./ContentWindow.css";
 
 const ContentWindow = () => {
@@ -24,8 +25,8 @@ const ContentWindow = () => {
       case "Character":
         return <Character />;
 
-      // case "Event":
-      //   return <Event />;
+      case "Event":
+        return <Event />;
 
       // case "Material":
       //   return <Material />;

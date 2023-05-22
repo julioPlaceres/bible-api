@@ -1,43 +1,12 @@
 import { useState } from "react";
-import Button from "./Button";
 import Select from "./Select";
-import {
-  Character,
-  Book,
-  Event,
-  Material,
-  Place,
-  River,
-} from "../components/formComponents/forms/Forms";
+import { Book } from "../components/formComponents/forms/book";
+import { Character } from "../components/formComponents/forms/character";
 import "./ContentWindow.css";
-
-const renderSwitch = (params) => {
-  switch (params) {
-    case "Book":
-      return <Book />;
-
-    case "Character":
-      return <Character />;
-
-    case "Event":
-      return <Event />;
-
-    case "Material":
-      return <Material />;
-
-    case "Place":
-      return <Place />;
-
-    case "River":
-      return <River />;
-
-    default:
-      return <Character />;
-  }
-};
 
 const ContentWindow = () => {
   const [modelName, setModelName] = useState("");
+
   const modelNames = [
     "Book",
     "Character",
@@ -47,14 +16,42 @@ const ContentWindow = () => {
     "River",
   ];
 
+  const renderSwitch = (modelName) => {
+    switch (modelName) {
+      case "Book":
+        return <Book />;
+
+      case "Character":
+        return <Character />;
+
+      // case "Event":
+      //   return <Event />;
+
+      // case "Material":
+      //   return <Material />;
+
+      // case "Place":
+      //   return <Place />;
+
+      // case "River":
+      //   return <River />;
+
+      default:
+        return (
+          <div className="cw-form-body">
+            <h5 className="cw-dft-model">
+              Select an option from the Model dropdown
+            </h5>
+          </div>
+        );
+    }
+  };
+
   const handleModelChange = (event) => {
     event.preventDefault();
 
     setModelName(event.target.value);
   };
-
-  const handleReset = () => {};
-  const handleSubmit = () => {};
 
   return (
     <div className="cw-main-cont cw-col">
@@ -67,13 +64,7 @@ const ContentWindow = () => {
           onChange={handleModelChange}
         />
       </div>
-
-      <div className="cw-form-body">{renderSwitch(modelName)}</div>
-
-      <div className="cw-btns-cont cw-row">
-        <Button label="Reset" onClick={handleReset} />
-        <Button label="submit" onClick={handleSubmit} />
-      </div>
+      {renderSwitch(modelName)}
     </div>
   );
 };

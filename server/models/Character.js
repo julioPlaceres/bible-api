@@ -57,13 +57,7 @@ const characterSchema = new Schema({
       ref: "Character",
     },
   ],
-  brother: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Character",
-    },
-  ],
-  sister: [
+  siblings: [
     {
       type: Schema.Types.ObjectId,
       ref: "Character",

@@ -1,5 +1,6 @@
 import { Dropdown } from "../fieldTypes/Dropdown";
 import { TextBox } from "../fieldTypes/TextBox";
+import { ImageUpload } from "../fieldTypes/Upload";
 import { GetAllCharacters, GetAllBooks, GetAllPlaces } from "../dataArr/Query";
 
 const yesNo = [
@@ -13,19 +14,21 @@ const yesNo = [
   },
 ];
 
-export const NameField = ({ placeholder }) => {
+export const NameField = ({ value, placeholder, onChange }) => {
   return (
     <TextBox
       labelText="Name"
+      value={value}
       placeholder={placeholder}
-      name="nameTextBox"
+      name="name"
       required={true}
       rows={1}
+      onChange={onChange}
     />
   );
 };
 
-export const GenderField = () => {
+export const GenderField = ({ value, onChange }) => {
   const gender = [
     { value: "male", label: "Male" },
     { value: "female", label: "Female" },
@@ -33,74 +36,112 @@ export const GenderField = () => {
 
   return (
     <>
-      <Dropdown labelText="Gender" name="gender" options={gender} />
+      <Dropdown
+        labelText="Gender"
+        value={value}
+        name="gender"
+        options={gender}
+        onChange={onChange}
+      />
     </>
   );
 };
 
-export const YearsLivedField = () => {
+export const YearsLivedField = ({ value, onChange }) => {
   return (
     <TextBox
       labelText="Years Lived"
+      value={value}
       placeholder="ie: 930"
       name="yearsLived"
       required={false}
       rows={1}
+      onChange={onChange}
     />
   );
 };
 
-export const RoleField = () => {
+export const RoleField = ({ value, onChange }) => {
   return (
     <TextBox
+      value={value}
       labelText="Role"
+      name="role"
       placeholder="ie: The Messiah"
       required={false}
+      onChange={onChange}
       rows={1}
     />
   );
 };
 
-export const NameMeaningField = () => {
+export const NameMeaningField = ({ value, onChange }) => {
   return (
     <TextBox
+      name="nameMeaning"
+      value={value}
       labelText="Name Meaning"
       placeholder="ie: The Savior"
       required={false}
+      onChange={onChange}
       rows={1}
     />
   );
 };
 
-export const MarriedField = () => {
-  return <Dropdown name="married" labelText="Married" options={yesNo} />;
+export const MarriedField = ({ value, onChange }) => {
+  return (
+    <Dropdown
+      name="married"
+      labelText="Married"
+      options={yesNo}
+      value={value}
+      onChange={onChange}
+    />
+  );
 };
 
-export const ImageField = () => {
-  return <>{/* Will be used to upload images */}</>;
-};
-
-export const FatherField = () => {
-  const options = GetAllCharacters();
-
+export const ImageField = ({ value, onChange }) => {
   return (
     <>
-      <Dropdown name="father" labelText="Father" options={options} />
+      <ImageUpload value={value} onChange={onChange} />
     </>
   );
 };
 
-export const MotherField = () => {
+export const FatherField = ({ value, onChange }) => {
   const options = GetAllCharacters();
 
   return (
     <>
-      <Dropdown name="mother" labelText="Mother" options={options} />
+      <Dropdown
+        name="father"
+        labelText="Father"
+        options={options}
+        value={value}
+        onChange={onChange}
+      />
     </>
   );
 };
 
-export const SpouseField = () => {
+export const MotherField = ({ value, onChange }) => {
+  const options = GetAllCharacters();
+
+  return (
+    <>
+      <Dropdown
+        name="mother"
+        labelText="Mother"
+        options={options}
+        value={value}
+        onChange={onChange}
+      />
+    </>
+  );
+};
+
+export const SpouseField = ({ value, onChange }) => {
   const options = GetAllCharacters();
 
   return (
@@ -110,12 +151,14 @@ export const SpouseField = () => {
         labelText="Spouse(s)"
         options={options}
         multiple={true}
+        value={value}
+        onChange={onChange}
       />
     </>
   );
 };
 
-export const ChildrenField = () => {
+export const ChildrenField = ({ value, onChange }) => {
   const options = GetAllCharacters();
 
   return (
@@ -125,42 +168,31 @@ export const ChildrenField = () => {
         labelText="Children(s)"
         options={options}
         multiple={true}
+        value={value}
+        onChange={onChange}
       />
     </>
   );
 };
 
-export const BrotherField = () => {
+export const SiblinsField = ({ value, onChange }) => {
   const options = GetAllCharacters();
 
   return (
     <>
       <Dropdown
-        name="brother"
-        labelText="Brother(s)"
+        name="siblins"
+        labelText="Siblin(s)"
         options={options}
         multiple={true}
+        value={value}
+        onChange={onChange}
       />
     </>
   );
 };
 
-export const SisterField = () => {
-  const options = GetAllCharacters();
-
-  return (
-    <>
-      <Dropdown
-        name="sister"
-        labelText="Sister(s)"
-        options={options}
-        multiple={true}
-      />
-    </>
-  );
-};
-
-export const OtherNamesField = () => {
+export const OtherNamesField = ({ value, onChange }) => {
   return (
     <>
       <TextBox
@@ -169,36 +201,50 @@ export const OtherNamesField = () => {
         placeholder="Separate names by a ','
         ie: The Savior, The Messiah"
         rows={3}
+        value={value}
+        onChange={onChange}
       />
     </>
   );
 };
 
-export const AuthorField = () => {
+export const AuthorField = ({ onChange }) => {
   const options = GetAllCharacters();
 
   return (
     <>
-      <Dropdown name="author" labelText="Author" options={options} />
+      <Dropdown
+        name="author"
+        labelText="Author"
+        options={options}
+        onChange={onChange}
+      />
     </>
   );
 };
 
-export const BookNameField = () => {
+export const BookNameField = ({ value, onChange }) => {
   const options = GetAllBooks();
 
   return (
     <>
-      <Dropdown name="book" labelText="Book" options={options} />
+      <Dropdown
+        name="book"
+        labelText="Book"
+        options={options}
+        value={value}
+        onChange={onChange}
+      />
     </>
   );
 };
 
-export const DateTimeField = () => {
+export const DateTimeField = (value) => {
   return (
     <>
       <TextBox
         name="dateTime"
+        value={value}
         labelText="Date Time"
         placeholder="ie: 25 BC, or the begining"
       />
@@ -206,11 +252,12 @@ export const DateTimeField = () => {
   );
 };
 
-export const DescriptionField = () => {
+export const DescriptionField = (value) => {
   return (
     <>
       <TextBox
         name="decription"
+        value={value}
         labelText="Description"
         placeholder="Brief description of the event"
         required={true}

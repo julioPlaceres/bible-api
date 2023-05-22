@@ -118,6 +118,9 @@ export const Character = () => {
       default:
         break;
     }
+
+    console.log(e.target.name);
+    console.log(e.target.value);
   };
 
   const handleSubmit = async (e) => {

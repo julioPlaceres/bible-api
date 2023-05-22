@@ -239,7 +239,7 @@ export const BookNameField = ({ value, onChange }) => {
   );
 };
 
-export const DateTimeField = (value) => {
+export const DateTimeField = ({ value, onChange }) => {
   return (
     <>
       <TextBox
@@ -247,27 +247,29 @@ export const DateTimeField = (value) => {
         value={value}
         labelText="Date Time"
         placeholder="ie: 25 BC, or the begining"
+        onChange={onChange}
       />
     </>
   );
 };
 
-export const DescriptionField = (value) => {
+export const DescriptionField = ({ value, onChange }) => {
   return (
     <>
       <TextBox
-        name="decription"
+        name="description"
         value={value}
         labelText="Description"
         placeholder="Brief description of the event"
         required={true}
         rows={5}
+        onChange={onChange}
       />
     </>
   );
 };
 
-export const CharactersField = () => {
+export const CharactersField = ({ value, onChange }) => {
   const options = GetAllCharacters();
 
   return (
@@ -276,13 +278,15 @@ export const CharactersField = () => {
         name="character"
         labelText="Characters"
         options={options}
+        value={value}
         multiple={true}
+        onChange={onChange}
       />
     </>
   );
 };
 
-export const LocationField = () => {
+export const LocationField = ({ value, onChange }) => {
   const options = GetAllPlaces();
 
   return (
@@ -292,6 +296,8 @@ export const LocationField = () => {
         labelText="Location"
         options={options}
         multiple={true}
+        value={value}
+        onChange={onChange}
       />
     </>
   );

@@ -1,14 +1,7 @@
 import { useState } from "react";
-import Button from "./Button";
 import Select from "./Select";
-import {
-  Character,
-  Book,
-  Event,
-  Material,
-  Place,
-  River,
-} from "../components/formComponents/forms/Forms";
+import { Book } from "../components/formComponents/forms/book";
+import { Character } from "../components/formComponents/forms/character";
 import "./ContentWindow.css";
 
 const ContentWindow = () => {
@@ -31,17 +24,17 @@ const ContentWindow = () => {
       case "Character":
         return <Character />;
 
-      case "Event":
-        return <Event />;
+      // case "Event":
+      //   return <Event />;
 
-      case "Material":
-        return <Material />;
+      // case "Material":
+      //   return <Material />;
 
-      case "Place":
-        return <Place />;
+      // case "Place":
+      //   return <Place />;
 
-      case "River":
-        return <River />;
+      // case "River":
+      //   return <River />;
 
       default:
         return (

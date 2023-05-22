@@ -1,6 +1,13 @@
 import "./Dropdown.css";
 
-export const Dropdown = ({ labelText, name, options, multiple, onChange }) => {
+export const Dropdown = ({
+  labelText,
+  name,
+  value,
+  options,
+  multiple,
+  onChange,
+}) => {
   if (!options.length) {
     return (
       <option key="none" value="none">
@@ -14,6 +21,7 @@ export const Dropdown = ({ labelText, name, options, multiple, onChange }) => {
       <label className="dd-label">{labelText}</label>
       <select
         name={name}
+        value={value}
         className="dd-select"
         multiple={multiple}
         onChange={onChange}

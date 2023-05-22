@@ -4,7 +4,7 @@ const typeDefs = gql`
   type Book {
     _id: ID
     name: String
-    author: String
+    author: Character
   }
 
   type Character {
@@ -20,8 +20,7 @@ const typeDefs = gql`
     mother: Character
     spouse: [Character]
     children: [Character]
-    brother: [Character]
-    sister: [Character]
+    siblings: [Character]
     otherNames: [String]
     book: [Book]
     fullName: String

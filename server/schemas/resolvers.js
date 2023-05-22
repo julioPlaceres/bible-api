@@ -57,8 +57,7 @@ const resolvers = {
       mother,
       spouse,
       children,
-      brother,
-      sister,
+      siblings,
       otherNames,
       book,
     }) => {
@@ -74,8 +73,7 @@ const resolvers = {
         mother,
         spouse,
         children,
-        brother,
-        sister,
+        siblings,
         otherNames,
         book,
       });

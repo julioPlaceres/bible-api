@@ -40,11 +40,7 @@ export const QUERY_ALL_CHARACTERS = gql`
         _id
         name
       }
-      brother {
-        _id
-        name
-      }
-      sister {
+      siblings {
         _id
         name
       }

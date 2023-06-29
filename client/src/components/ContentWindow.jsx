@@ -3,56 +3,30 @@ import Select from "./Select";
 import { Book } from "../components/formComponents/forms/book";
 import { Character } from "../components/formComponents/forms/character";
 import { Event } from "../components/formComponents/forms/event";
+// import { Material } from "../components/formComponents/forms/material";
+// import { Place } from "../components/formComponents/forms/place";
+// import { River } from "../components/formComponents/forms/river";
 import "./ContentWindow.css";
+
+const modelComponents = {
+  BookModel: Book,
+  CharacterModel: Character,
+  EventModel: Event,
+  //"Material",
+  //"Place",
+  //"River",
+};
 
 const ContentWindow = () => {
   const [modelName, setModelName] = useState("");
-
-  const modelNames = [
-    "Book",
-    "Character",
-    "Event",
-    "Material",
-    "Place",
-    "River",
-  ];
-
-  const renderSwitch = (modelName) => {
-    switch (modelName) {
-      case "Book":
-        return <Book />;
-
-      case "Character":
-        return <Character />;
-
-      case "Event":
-        return <Event />;
-
-      // case "Material":
-      //   return <Material />;
-
-      // case "Place":
-      //   return <Place />;
-
-      // case "River":
-      //   return <River />;
-
-      default:
-        return (
-          <div className="cw-form-body">
-            <h5 className="cw-dft-model">
-              Select an option from the Model dropdown
-            </h5>
-          </div>
-        );
-    }
-  };
 
   const handleModelChange = (event) => {
     event.preventDefault();
 
     setModelName(event.target.value);
   };
+
+  const ModelComponent = modelComponents[modelName];
 
   return (
     <div className="cw-main-cont cw-col">
@@ -61,11 +35,19 @@ const ContentWindow = () => {
           id="modelId"
           label="Select a model"
           name="modelSelect"
-          values={modelNames}
+          values={Object.keys(modelComponents)}
           onChange={handleModelChange}
         />
       </div>
-      {renderSwitch(modelName)}
+      {ModelComponent ? (
+        <ModelComponent />
+      ) : (
+        <div className="cw-form-body">
+          <h5 className="cw-dft-model">
+            Select an option from the Model dropdown
+          </h5>
+        </div>
+      )}
     </div>
   );
 };
